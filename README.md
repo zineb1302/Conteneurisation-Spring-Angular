@@ -116,3 +116,35 @@ Dans Docker Compose, les conteneurs communiquent via leur nom de service:
 ### Multi-stage Dockerfile
 1. **Stage Builder**: compile avec Maven
 2. **Stage Runtime**: image legere avec le JAR
+
+.
+## How to Run
+
+1.  **Build and Start**:
+    Run the following command in the root directory:
+    ```bash
+    docker compose up -d --build
+    ```
+    ![alt text](image.png)
+
+2.  **Check Status**:
+    Verify that all containers are running:
+    ```bash
+    docker compose ps
+    ```
+
+3.  **Logs**:
+    To see logs for a specific service (e.g., client-service):
+    ```bash
+    docker compose logs -f client-service
+    ```
+
+## Access Points
+
+*   **Consul Dashboard**: [http://localhost:8500](http://localhost:8500)
+![alt text](image-1.png)
+*   **phpMyAdmin**: [http://localhost:8083](http://localhost:8083) (User: `root`, Password: `root`)
+![alt text](image-2.png)
+*   **Gateway API**: [http://localhost:8888](http://localhost:8888)
+*   **Client Service**: [http://localhost:8088](http://localhost:8088)
+*   **Voiture Service**: [http://localhost:8089](http://localhost:8089)
